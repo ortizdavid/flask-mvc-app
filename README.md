@@ -29,7 +29,7 @@ CREATE DATABASE flask_mvc_app;
 
 3 - Copiar o script da base de dados:
 
-[Ficheiro](flask_mvc_app.sql)
+[Ficheiro .sql](flask_mvc_app.sql)
 
 ou
 
@@ -83,7 +83,7 @@ pip install virtualenv
 ``
 
 3 - Criar o Ambiente Virtual:
-```
+``
 virtualenv venv
 ``
 
