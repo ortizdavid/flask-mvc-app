@@ -40,7 +40,6 @@ CREATE TABLE tb_perfil (
     id_perfil SERIAL PRIMARY KEY,
     nome_perfil VARCHAR(50) UNIQUE NOT NULL 
 );
-
 CREATE TABLE tb_usuario (
     id_usuario SERIAL PRIMARY KEY,
     id_perfil INT NOT NULL,
@@ -50,7 +49,6 @@ CREATE TABLE tb_usuario (
     foto VARCHAR(100),
     data_registo DATE DEFAULT CURRENT_DATE
 );
-
 CREATE TABLE tb_actividade (
     id_actividade SERIAL PRIMARY KEY,
     id_usuario INT NOT NULL,
@@ -61,7 +59,6 @@ CREATE TABLE tb_actividade (
     descricao VARCHAR(150) NOT NULL,
     CONSTRAINT fk_actividade_usuario FOREIGN KEY(id_usuario) REFERENCES tb_usuario(id_usuario) 
 );
-
 INSERT INTO tb_perfil (nome_perfil) VALUES ('administrador');
 INSERT INTO tb_perfil (nome_perfil) VALUES ('normal');
 INSERT INTO tb_usuario (id_perfil, email, senha) VALUES (1, 'admin@gmail.com', '12345678');
