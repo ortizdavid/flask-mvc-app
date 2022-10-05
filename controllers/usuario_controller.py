@@ -9,7 +9,7 @@ class UsuarioController:
     @app.route('/registo-usuario', methods=['GET', 'POST'])
     def registo_usuario():
         if request.method == 'GET': 
-            return render_template('usuario/registar.html')
+            return render_template('usuario/registo-usuario.html')
         else:
             USUARIO_NORMAL = 2
             email = request.form['email']
@@ -21,7 +21,6 @@ class UsuarioController:
             usuario = Usuario(USUARIO_NORMAL, email, senha, nome, foto)
             usuario.salvar()
             return redirect(url_for('login'))
-    
 
     @app.route(f'/usuarios', methods=['GET'])
     def listar_usuarios():
@@ -30,7 +29,6 @@ class UsuarioController:
         usuario_logado = Usuario.obter_usuario_logado()
         return render_template('usuario/listar.html', lista_usuarios=usuarios, num_registos=qtd, 
                                 usuario_logado=usuario_logado)
-
 
     @app.route(f'/usuarios/<id>/detalhes', methods=['GET'])
     def detalhes_usuario(id):
@@ -48,5 +46,19 @@ class UsuarioController:
         return render_template('usuario/dados_pessoais.html', dados=dados, usuario_logado=usuario_logado)
    
         
-        
+    @app.route('/usuarios/registar', methods=['GET', 'POST'])
+    def registar_usuario():
+        if request.method == 'GET': 
+            return render_template('usuario/registar.html', usuario_logado=Usuario.obter_usuario_logado())
+        else:
+            USUARIO_NORMAL = 2
+            email = request.form['email']
+            senha = request.form['senha']
+            nome = request.form['nome']
+            file = request.files['foto']
+            foto = secure_filename(file.filename)
+            file.save(os.path.join(DIR_UPLOAD_IMG, foto))
+            usuario = Usuario(USUARIO_NORMAL, email, senha, nome, foto)
+            usuario.salvar()
+            return redirect(url_for('listar_usuarios'))    
 

@@ -15,8 +15,3 @@ db = SQLAlchemy()
 db.init_app(app)
 
 engine = create_engine(CONNECTION_STR)
-
-
-
-
-

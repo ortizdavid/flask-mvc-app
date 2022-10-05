@@ -110,4 +110,3 @@ flask run ou python app.py
 9 - Faça Login(com Email) como Administrador de Teste:
 - Email: admin@gmail.com
 - Senha: 12345678
-

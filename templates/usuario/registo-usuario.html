@@ -1,14 +1,14 @@
-{% extends "_layouts/layout_back.html" %}
+{% extends "_layouts/layout_front.html" %}
 
 {% block title %} Registar {% endblock %}
 
 {% block content %}
 
-    <h2>Registar Usuários</h2>
+    <h2>Registo de Usuários</h2>
 
     <div class="card ">
         <div class="row">
-            <form action="/usuarios/registar" method="POST" enctype="multipart/form-data" class="">
+            <form action="/registo-usuario" method="POST" enctype="multipart/form-data" class="">
                 <div class="card">
                     <div class="card-header">
                         Dados
@@ -61,7 +61,7 @@
                             <i class=""></i>
                             Submeter
                         </button>
-                        <a href="/usuarios" class="btn btn-danger">
+                        <a href="/inicio" class="btn btn-danger">
                             <i class=""></i>
                             Cancelar
                         </a>
