@@ -62,11 +62,9 @@ CREATE TABLE tb_actividade (
     CONSTRAINT fk_actividade_usuario FOREIGN KEY(id_usuario) REFERENCES tb_usuario(id_usuario) 
 );
 
--- INSERÇÃO --------------------------------------
 INSERT INTO tb_perfil (nome_perfil) VALUES ('administrador');
 INSERT INTO tb_perfil (nome_perfil) VALUES ('normal');
 INSERT INTO tb_usuario (id_perfil, email, senha) VALUES (1, 'admin@gmail.com', '12345678');
-
 ``
 
 
@@ -78,7 +76,7 @@ cd flask-mvc-app
 ``
 
 2 - Instalar o Ambiente Virtual (Virtual Environment):
-```
+``
 pip install virtualenv
 ``
 
