@@ -29,11 +29,11 @@ CREATE DATABASE flask_mvc_app;
 
 3 - Copiar o script da base de dados:
 
-[Ficheiro .sql](flask_mvc_app.sql)
+Ficheiro [flask_mvc_app.sql](flask_mvc_app.sql)
 
 ou
 
-O Seguinte Script:
+Copiar o Seguinte Script:
 
 ``
 CREATE TABLE tb_perfil (
