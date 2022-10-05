@@ -1,0 +1,26 @@
+{% extends "_layouts/layout_back.html" %}
+
+{% block title %} Detalhes {% endblock %}
+
+{% block content %}
+
+    <h3>Detalhes do Usuário</h3>
+
+    <a href="/usuarios" class="btn btn-priary">Voltar</a>
+
+    <div class="card" style="padding: 1%;">
+        <div class="card-header">
+            <h5>Dados</h5>
+        </div>
+        <div class="card-body">
+            <img style="width:30%" class="img img-rounded" src="/static/uploads/{{ usuario.foto }}" alt="Fotografia" class="card-img-left">
+            <hr>
+            <p><strong>Id: </strong>{{ usuario.id_usuario }}</p>
+            <p><strong>Nome: </strong>{{ usuario.nome }}</p>
+            <p><strong>Perfil: </strong>{{ usuario.nome_perfil }}</p>
+            <p><strong>Email: </strong>{{ usuario.email }}</p>
+            <p><strong>Data de Registo: </strong>{{ usuario.data_registo }}</p>
+        </div>
+    </div>
+
+{% endblock %}

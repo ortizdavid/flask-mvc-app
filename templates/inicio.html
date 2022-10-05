@@ -1,0 +1,27 @@
+{% extends "_layouts/layout_front.html" %}
+
+{% block title %} Início {% endblock %}
+
+{% block content %}
+
+    <h2>Aplicação MVC Simples com Flask MVC</h2><br>
+
+    <div class="alert ">
+        <h6> Esta Aplicação permite o registo as suas actividades diárias</h6><hr>
+        <p><strong>Funcionalidades:</strong></p>
+        <ul>
+            <li>Listagem de Actividades Diárias</li>
+            <li>Registo de Actividades Diárias</li>
+            <li>Registo de Usuários, incluíndo Upload de Imagens</li>
+            <li>Detalhes das Actividades</li>
+        </ul>
+
+        <p><strong>Modo de Autenticação:</strong></p>
+        <ul>
+            <li>Efectuar Registo <a href="/registo-usuario"> <b>Aqui</b> </a> </li>
+            <li>Preencher o Formulário de Registo</li>
+            <li>Entrar Com Email e a Senha <a href="/login"> <b>Aqui</b> </a></li>
+        </ul>
+    </div>
+    
+{% endblock %}

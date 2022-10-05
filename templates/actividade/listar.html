@@ -1,0 +1,53 @@
+{% extends "_layouts/layout_back.html" %}
+
+{% block title %} Actividades {% endblock %}
+
+{% block content %}
+
+    <h2>Actividades</h2>
+
+    <div align="right">
+        <a href="/actividades/registar" class="btn btn-primary">Registar</a>
+    </div>
+
+    <div class="card" style="padding: 1%;">
+        {% if num_registos == 0 %}
+        <div class="alert alert-warning">
+            <h5>Nenhum Registo Encontrado!</h5>
+        </div>
+        {% else %}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Actividade</th>
+                        <th>Início</th>
+                        <th>Fim</th>
+                        <th>Resultado</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for actividade in lista_actividades %}
+                        <tr>
+                            <td>{{ actividade.id_actividade }}</td>
+                            <td>{{ actividade.nome_actividade }}</td>
+                            <td>{{ actividade.data_inicio }}</td>
+                            <td>{{ actividade.data_fim }}</td>
+                            <td>{{ actividade.resultado }}</td>
+                            <td>
+                                <a href="/actividades/{{ actividade.id_actividade }}/eliminar" class="btn btn-danger">
+                                    Eliminar
+                                </a>
+                                <a href="/actividades/{{ actividade.id_actividade }}/detalhes" class="btn btn-primary">
+                                    Detalhes
+                                </a>
+                            <td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+    
+{% endblock %}

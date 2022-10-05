@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+        <script src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static', filename = 'js/jquery.min.js')}}"></script>
+        <title>Flask MVC App - {% block title %}{% endblock %}</title>
+    {% endblock %}        
+</head>
+<body style="background-color: hsl(233, 44%, 96%);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/" style="color: white">
+                Flask MVC
+            </a>
+          <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a href="/inicio"  class="nav-link active" aria-current="page"style="color: white">
+                    Início 
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/registo-usuario" class="nav-link" style="color: white">
+                    Efectuar Registo
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/login" class="nav-link" style="color: white">
+                    Área Reservada
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div id="content" class="container ">
+      <br><br><br>
+        {% block content %}
+        
+        {% endblock %} 
+    </div>
+
+    <br><br>
+    <div id="footer" class="footer" >
+        {% block footer %}
+            <div align="center">
+                &copy; Copyright 2022 
+            </div>
+        {% endblock %}
+    </div>
+    
+</body>
+</html>
+

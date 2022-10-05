@@ -1,0 +1,74 @@
+{% extends "_layouts/layout_back.html" %}
+
+{% block title %} Registar {% endblock %}
+
+{% block content %}
+
+    <h2>Registar Actividade Diária</h2>
+
+    <div class="card ">
+        <div class="row">
+            <form action="{{ url_for('registar_actividade') }}" method="POST" enctype="multipart/form-data" class="">
+                <div class="card">
+                    <div class="card-header">
+                        Dados
+                    </div>
+                    <div class="card-body">
+                        <div class="col-xs-12 col-sm-12 col md-12">
+                            <div class="form-group" >
+                                <strong>Nome da Actividade:</strong>
+                                <input type="text" name="nome_actividade" id="" class="form-control" placeholder="Nome da Actividade" autofocus>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col md-12">
+                            <div class="form-group" style="width: 30%">
+                                <strong>Data de Início:</strong>
+                                <input type="date" name="data_inicio" id="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col md-12">
+                            <div class="form-group" style="width: 30%">
+                                <strong>Data de Término:</strong>
+                                <input type="date" name="data_fim" id="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col md-12">
+                            <div class="form-group" style="width: 30%">
+                                <strong>Resultado:</strong>
+                                <select name="resultado" id="" class="form-control">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Bom">Bom</option>
+                                    <option value="Mau">Mau</option>
+                                    <option value="Muito Bom">Muito Bom</option>
+                                    <option value="Muito Mau">Muito Mau</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col md-12">
+                            <div class="form-group" style="width: 90%">
+                                <strong>Descrição:</strong>
+                                <textarea name="descricao" id="" cols="30" rows="5" class="form-control">Descrição Por Editar</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                
+                <div class="col-xs-12 col-sm-12 col md-12" style="padding-left: 10px;;">
+                    <div class="form-group">
+                        <br>
+                        <button type="submit" class="btn btn-primary">
+                            <i class=""></i>
+                            Submeter
+                        </button>
+                        <a href="/clientes" class="btn btn-danger">
+                            <i class=""></i>
+                            Cancelar
+                        </a>
+                    </div>
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>  
+
+{% endblock %}

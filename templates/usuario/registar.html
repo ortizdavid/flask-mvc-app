@@ -1,0 +1,75 @@
+{% extends "_layouts/layout_front.html" %}
+
+{% block title %} Registar {% endblock %}
+
+{% block content %}
+
+    <h2>Registo de Usuários</h2>
+
+    <div class="card ">
+        <div class="row">
+            <form action="/registo-usuario" method="POST" enctype="multipart/form-data" class="">
+                <div class="card">
+                    <div class="card-header">
+                        Dados
+                    </div>
+                    <div class="card-body">
+                        <div class="col-xs-12 col-sm-12 col md-12">
+                            <div class="form-group" >
+                                <strong>Nome:</strong>
+                                <input type="text" name="nome" id="" class="form-control" placeholder="Nome do Usuário" autofocus>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="card">
+                    <div class="card-header">
+                        Dados de Utilizador
+                    </div>
+                    <div class="card-body">
+                        <div class="col-xs-12 col-sm-12 col md-12">
+                            <div class="form-group" style="width: 50%;">
+                                <strong>Email:</strong>
+                                <input type="email" name="email" value="" placeholder="Email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col md-12">
+                            <div class="form-group" style="width: 50%;">
+                                <strong>Senha:</strong>
+                                <input type="password" name="senha" value="" placeholder="Senha" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Ficheiro
+                    </div>
+                    <div class="card-body">
+                        <div class="col-xs-12 col-sm-12 col md-12">
+                            <div class="form-group" style="width: 30%;">
+                                <strong>Fotografia:</strong>
+                                <input type="file" name="foto" value=""  class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col md-12" style="padding-left: 10px;;">
+                    <div class="form-group">
+                        <br>
+                        <button type="submit" class="btn btn-primary">
+                            <i class=""></i>
+                            Submeter
+                        </button>
+                        <a href="/inicio" class="btn btn-danger">
+                            <i class=""></i>
+                            Cancelar
+                        </a>
+                    </div>
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>  
+
+{% endblock %}

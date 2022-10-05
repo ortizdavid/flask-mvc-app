@@ -1,0 +1,26 @@
+{% extends "_layouts/layout_back.html" %}
+
+{% block title %} Detalhes {% endblock %}
+
+{% block content %}
+
+    <h3>Detalhes da Actividade</h3>
+
+    <a href="/actividades" class="btn btn-primary">Voltar</a>
+
+    <div class="card" style="padding: 1%;">
+        <div class="card-header">
+            <h5>Dados</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Id: </strong>{{ actividade.id_actividade }}</p>
+            <p><strong>Actividade: </strong>{{ actividade.nome_actividade }}</p>
+            <p><strong>Usuário: </strong>{{ actividade.nome }}</p>
+            <p><strong>Início: </strong>{{ actividade.data_inicio }}</p>
+            <p><strong>Fim: </strong>{{ actividade.data_fim }}</p>
+            <p><strong>Descrição: </strong>{{ actividade.descricao }}</p>
+            <p><strong>Resultado: </strong>{{ actividade.resultado }}</p>
+        </div>
+    </div>
+
+{% endblock %}

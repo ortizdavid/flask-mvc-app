@@ -1,0 +1,26 @@
+{% extends "_layouts/layout_back.html" %}
+
+{% block title %} Detalhes {% endblock %}
+
+{% block content %}
+
+    <h3>Menus dados Pessoais</h3>
+
+    <a href="/pagina-inicial" class="btn btn-priary">Voltar</a>
+
+    <div class="card" style="padding: 1%;">
+        <div class="card-header">
+            <h5>Dados</h5>
+        </div>
+        <div class="card-body">
+            <img style="width:30%" class="img img-rounded" src="/static/uploads/{{ dados.foto }}" alt="Fotografia" class="card-img-left">
+            <hr>
+            <p><strong>Id: </strong>{{ dados.id_usuario }}</p>
+            <p><strong>Nome: </strong>{{ dados.nome }}</p>
+            <p><strong>Perfil: </strong>{{ dados.nome_perfil }}</p>
+            <p><strong>Email: </strong>{{ dados.email }}</p>
+            <p><strong>Data de Registo: </strong>{{ dados.data_registo }}</p>
+        </div>
+    </div>
+
+{% endblock %}

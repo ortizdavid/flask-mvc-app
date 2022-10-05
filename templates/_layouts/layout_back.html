@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+        <script src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static', filename = 'js/jquery.min.js')}}"></script>
+        <title>Flask MVC App - {% block title %}{% endblock %}</title>
+    {% endblock %}        
+</head>
+<body style="background-color: hsl(233, 44%, 96%);">
+
+    <!-- INCLUSÃO DE MENUS DE ACORDO O PERFIL -->
+    {% if usuario_logado.nome_perfil == 'administrador' %}
+        {% include '_layouts/menu_admin.html' %}
+    {% elif usuario_logado.nome_perfil == 'normal' %}
+        {% include '_layouts/menu_normal.html' %}
+    {% else %}
+        {% include '_erro/404.html' %}
+    {% endif %}
+
+    <div id="content" class="container ">
+      <br><br>
+        {% block content %}
+        
+        {% endblock %} 
+    </div>
+    <hr>
+    <div id="footer" class="footer" >
+        {% block footer %}
+            <div align="center">
+                &copy; Copyright 2022 
+            </div>
+        {% endblock %}
+    </div>
+</body>
+</html>
+
