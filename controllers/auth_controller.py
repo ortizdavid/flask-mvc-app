@@ -17,13 +17,11 @@ class AuthController:
                 return redirect(url_for('pagina_inicial'))
             else:
                 return redirect(url_for('login'))
-            
 
     @app.route(f'/logout', methods=['GET'])
     def logout():
         session.pop('email')
         return redirect(url_for('login'))
-
 
     @app.route(f'/pagina-inicial', methods=['GET'])
     def pagina_inicial():

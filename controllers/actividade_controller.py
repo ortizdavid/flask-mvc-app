@@ -15,20 +15,16 @@ class ActividadeController:
         qtd = len(actividades)
         return render_template('actividade/listar.html', lista_actividades=actividades, num_registos=qtd, usuario_logado=usuario_logado)
 
-
     @app.route(f'/actividades/<id>/detalhes', methods=['GET'])
     def detalhes_actividade(id):
         actividade = Actividade.obter_por_id(id)
         return render_template('actividade/detalhes.html', actividade=actividade, usuario_logado=Usuario.obter_usuario_logado())
-       
-
 
     @app.route(f'/actividades/registar', methods=['GET', 'POST'])
     def registar_actividade():
         usuario_logado = Usuario.obter_usuario_logado()
         if request.method == 'GET': 
             return render_template('actividade/registar.html', usuario_logado=usuario_logado)
-        
         nome_actividade = request.form['nome_actividade']
         data_inicio = request.form['data_inicio']
         data_fim = request.form['data_fim']

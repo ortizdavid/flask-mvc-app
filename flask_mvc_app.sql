@@ -27,7 +27,5 @@ CREATE TABLE tb_actividade (
 -- INSERÇÃO de PERFIS DE USUÁRIO --------------------------------------
 INSERT INTO tb_perfil (nome_perfil) VALUES ('administrador');
 INSERT INTO tb_perfil (nome_perfil) VALUES ('normal');
-
--- INSERÇÃO DO USUÁRIO ADMIN ------------------------------------------------------------
 INSERT INTO tb_usuario (id_perfil, email, senha) VALUES (1, 'admin@gmail.com', '12345678');
 

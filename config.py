@@ -2,7 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 
-CONNECTION_STR = "postgresql://postgres:003334743LA032@localhost:5432/flask_mvc_app"
+DB_PASSWORD = 'Sua_Palavra_Passe'
+CONNECTION_STR = f"postgresql://postgres:{DB_PASSWORD}@localhost:5432/flask_mvc_app"
 DIR_UPLOAD_IMG = 'static/uploads/'
 
 app = Flask(__name__)

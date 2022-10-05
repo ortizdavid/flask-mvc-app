@@ -17,19 +17,19 @@
 
 ## Execução da Base de Dados (PostgreSQL)
 
-1 - Criar a Base de Dados
+1 - Criar a Base de Dados:
 ``
 CREATE DATABASE flask_mvc_app;
 ``
 
-2 - Conectar a Base de Dados
+2 - Conectar a Base de Dados:
 ``
 \c flask_mvc_app;
 ``
 
 3 - Copiar o script da base de dados:
 
-Ficheiro [flask_mvc_app.sql](flask_mvc_app.sql)
+Ficheiro - [flask_mvc_app.sql](flask_mvc_app.sql)
 
 ou
 
@@ -92,17 +92,22 @@ venv/Scripts/activate
 pip install -r requirements.txt
 ``
 
+6 - Editar a palavra passe da Base de dados:
+ficheiro: [config.py](config.py)
+``
+DB_PASSWORD = 'Sua_Palavra_Passe'
+``
 
-6 - Executar o projecto, entre na linha de comando execute o comando:
+7 - Executar o projecto, entre na linha de comando execute o comando:
 ``
 flask run ou python app.py
 ``
 
-7 - Entre no Navegador:
+8 - Entre no Navegador:
 
 <http://localhost:5000>
 
-8 - Faça Login(com Email) como Administrador de Teste:
+9 - Faça Login(com Email) como Administrador de Teste:
 - Email: admin@gmail.com
 - Senha: 12345678
 
