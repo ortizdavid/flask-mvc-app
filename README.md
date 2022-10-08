@@ -15,6 +15,7 @@
 - PIP
 
 \
+\
 
 ## Execução da Base de Dados (PostgreSQL)
 
@@ -41,6 +42,7 @@ CREATE TABLE tb_perfil (
     id_perfil SERIAL PRIMARY KEY,
     nome_perfil VARCHAR(50) UNIQUE NOT NULL 
 );
+\
 \
 CREATE TABLE tb_usuario (
     id_usuario SERIAL PRIMARY KEY,
